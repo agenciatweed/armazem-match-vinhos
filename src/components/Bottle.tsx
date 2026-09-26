@@ -11,7 +11,7 @@ const COLORS: Record<WineType, string> = {
 };
 
 /** Garrafa genérica por tipo; silhueta em SVG se a imagem não carregar. */
-export function Bottle({ tipo }: { tipo: WineType }) {
+export function Bottle({ tipo, eager = false }: { tipo: WineType; eager?: boolean }) {
   const [failed, setFailed] = useState(false);
   if (failed) {
     return (
@@ -33,7 +33,7 @@ export function Bottle({ tipo }: { tipo: WineType }) {
       alt=""
       width="300"
       height="900"
-      loading="lazy"
+      loading={eager ? 'eager' : 'lazy'}
       decoding="async"
       onError={() => setFailed(true)}
     />

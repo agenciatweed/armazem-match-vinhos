@@ -424,6 +424,21 @@ button {
   background: var(--ink);
 }
 
+.progress__box {
+  display: grid;
+  place-items: center;
+}
+
+.progress__tick {
+  width: 11px;
+  height: 11px;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .progress__box.is-current {
   border: 2px solid var(--ink);
   box-shadow: inset 0 0 0 2px var(--paper), inset 0 0 0 7px var(--rule);
@@ -550,30 +565,111 @@ button {
   }
 }
 
-/* ---------- Interstício ---------- */
+/* ---------- Interstício: a ficha completa ---------- */
 
 .sheet--loading {
-  min-height: 300px;
-  animation: fade 380ms var(--ease-out) both;
+  display: flex;
+  flex-direction: column;
+  min-height: 460px;
 }
 
 .loading__text {
-  margin: 48px 0 28px;
+  margin: 8px 0 4px;
 }
 
-.loading__rule {
-  height: 2px;
+.loading__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 150px;
+}
+
+.loading__ticks {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.loading__tick {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
   background: var(--ink);
-  transform-origin: left center;
-  animation: draw-rule linear both;
+  animation: tick-gather 340ms var(--ease-in) 640ms forwards;
 }
 
-@keyframes draw-rule {
+.loading__tick svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes tick-gather {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--n) * -36px)) scale(0.4);
+  }
+}
+
+.loading__stamp {
+  width: 124px;
+  height: 124px;
+  opacity: 0;
+  animation: stamp-reveal 380ms var(--ease-out) 900ms forwards;
+}
+
+.loading__stamp .stamp {
+  float: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  animation: none;
+}
+
+@keyframes stamp-reveal {
   from {
-    transform: scaleX(0);
+    opacity: 0;
+    transform: scale(1.35);
   }
   to {
-    transform: scaleX(1);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loading__bottles {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 22px;
+  height: 150px;
+  margin: auto -20px -28px;
+  padding: 14px 20px 10px;
+  background:
+    linear-gradient(to top, #dfe6eb 0 10px, transparent 10px),
+    var(--plate);
+}
+
+.loading__bottle {
+  height: 100%;
+  animation: bottle-rise 520ms var(--ease-out) calc(480ms + var(--i) * 110ms) both;
+}
+
+.loading__bottle .bottle {
+  height: 100%;
+}
+
+@keyframes bottle-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
   }
 }
 
@@ -940,6 +1036,10 @@ button {
     --gutter: 24px;
   }
 
+  .loading__bottles {
+    margin: auto -40px -40px;
+  }
+
   .shell__band {
     padding-top: 26px;
     padding-bottom: 22px;
@@ -1018,6 +1118,183 @@ button {
   .actions .btn {
     flex: 0 1 auto;
   }
+}
+
+
+/* ---------- View Transitions: a ficha que vira trio ---------- */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+}
+
+::view-transition-group(*) {
+  animation-timing-function: var(--ease-out);
+}
+
+html[data-vt] .sheet--main {
+  view-transition-name: sheet;
+}
+
+::view-transition-group(sheet) {
+  animation-duration: 560ms;
+}
+
+::view-transition-image-pair(sheet),
+::view-transition-image-pair(q-body) {
+  overflow: hidden;
+}
+
+::view-transition-old(sheet),
+::view-transition-new(sheet),
+::view-transition-old(q-body),
+::view-transition-new(q-body) {
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+  object-position: top center;
+}
+
+/* Troca de pergunta: o bloco sai para cima e o próximo entra de baixo. */
+html[data-vt='step'] .question__body {
+  view-transition-name: q-body;
+}
+
+::view-transition-old(q-body) {
+  animation: vt-out 280ms var(--ease-in) both;
+}
+
+::view-transition-new(q-body) {
+  animation: vt-in 380ms var(--ease-out) 220ms both;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* O cabeçalho da ficha fica parado enquanto a pergunta troca. */
+html[data-vt='step'] .sheet__head {
+  view-transition-name: sheet-head;
+}
+
+::view-transition-old(sheet-head) {
+  animation: none;
+  opacity: 0;
+}
+
+::view-transition-new(sheet-head) {
+  animation: none;
+}
+
+/* A caixa marcada voa até o quadrado do progresso. */
+html[data-vt='step'] .option.is-pending .option__box,
+html[data-vt='step'] .progress__box.is-fresh {
+  view-transition-name: tick-fly;
+}
+
+::view-transition-group(tick-fly) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+/* P5: os cinco vistos descem para a ficha completa. */
+html[data-vt='final'] .progress__box.is-done:nth-child(1),
+html[data-vt='final'] .loading__tick:nth-child(1) {
+  view-transition-name: tick-0;
+}
+html[data-vt='final'] .progress__box.is-done:nth-child(2),
+html[data-vt='final'] .loading__tick:nth-child(2) {
+  view-transition-name: tick-1;
+}
+html[data-vt='final'] .progress__box.is-done:nth-child(3),
+html[data-vt='final'] .loading__tick:nth-child(3) {
+  view-transition-name: tick-2;
+}
+html[data-vt='final'] .progress__box.is-done:nth-child(4),
+html[data-vt='final'] .loading__tick:nth-child(4) {
+  view-transition-name: tick-3;
+}
+html[data-vt='final'] .option.is-pending .option__box,
+html[data-vt='final'] .loading__tick:nth-child(5) {
+  view-transition-name: tick-4;
+}
+
+::view-transition-group(tick-0),
+::view-transition-group(tick-1),
+::view-transition-group(tick-2),
+::view-transition-group(tick-3),
+::view-transition-group(tick-4) {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+::view-transition-group(tick-1) { animation-delay: 30ms; }
+::view-transition-group(tick-2) { animation-delay: 60ms; }
+::view-transition-group(tick-3) { animation-delay: 90ms; }
+::view-transition-group(tick-4) { animation-delay: 120ms; }
+
+/* Revelação: o carimbo assenta ao lado do nome e cada garrafa vai para o seu card. */
+html[data-vt='reveal'] .loading__stamp .stamp,
+html[data-vt='reveal'] .sheet--profile .stamp {
+  view-transition-name: stamp;
+}
+
+::view-transition-group(stamp) {
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+::view-transition-image-pair(stamp) {
+  animation: stamp-press 700ms var(--ease-out) both;
+}
+
+@keyframes stamp-press {
+  0% {
+    transform: scale(1);
+  }
+  72% {
+    transform: scale(1.14);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+html[data-vt='reveal'] .loading__bottle:nth-child(1) .bottle,
+html[data-vt='reveal'] .trio .wine:nth-child(1) .bottle {
+  view-transition-name: bottle-0;
+}
+html[data-vt='reveal'] .loading__bottle:nth-child(2) .bottle,
+html[data-vt='reveal'] .trio .wine:nth-child(2) .bottle {
+  view-transition-name: bottle-1;
+}
+html[data-vt='reveal'] .loading__bottle:nth-child(3) .bottle,
+html[data-vt='reveal'] .trio .wine:nth-child(3) .bottle {
+  view-transition-name: bottle-2;
+}
+
+::view-transition-group(bottle-0),
+::view-transition-group(bottle-1),
+::view-transition-group(bottle-2) {
+  animation-duration: 780ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+::view-transition-group(bottle-1) { animation-delay: 70ms; }
+::view-transition-group(bottle-2) { animation-delay: 140ms; }
+
+.result--arrived .sheet--profile,
+.result--arrived .wine,
+.result--arrived .stamp {
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

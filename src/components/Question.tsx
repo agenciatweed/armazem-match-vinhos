@@ -10,17 +10,18 @@ interface Props {
   pending: OptionKey | null;
   phase: 'idle' | 'leaving' | 'entering';
   answered: number;
+  fresh: number | null;
   onPick: (key: OptionKey) => void;
   onBack: (() => void) | null;
 }
 
 export const Question = forwardRef<HTMLHeadingElement, Props>(function Question(
-  { question, step, selected, pending, phase, answered, onPick, onBack },
+  { question, step, selected, pending, phase, answered, fresh, onPick, onBack },
   titleRef,
 ) {
   const active = pending ?? selected;
   return (
-    <section className={`sheet sheet--question is-${phase}`} aria-labelledby={`${question.id}-title`}>
+    <section className={`sheet sheet--main sheet--question is-${phase}`} aria-labelledby={`${question.id}-title`}>
       <div className="sheet__head">
         {onBack ? (
           <button type="button" className="back" onClick={onBack}>
@@ -32,36 +33,34 @@ export const Question = forwardRef<HTMLHeadingElement, Props>(function Question(
         ) : (
           <span />
         )}
-        <Progress step={step} answered={answered} />
+        <Progress step={step} answered={answered} fresh={fresh} />
       </div>
 
-      <h1 id={`${question.id}-title`} ref={titleRef} className="display display--l question__title" tabIndex={-1}>
-        {question.title}
-      </h1>
+      <div className="question__body">
+        <h1 id={`${question.id}-title`} ref={titleRef} className="display display--l question__title" tabIndex={-1}>
+          {question.title}
+        </h1>
 
-      <ol className="options" aria-label="Escolha uma opção">
-        {question.options.map((o, i) => {
-          const isOn = active === o.key;
-          return (
-            <li key={o.key}>
-              <button
-                type="button"
-                className={isOn ? 'option is-on' : 'option'}
-                aria-pressed={isOn}
-                onClick={() => onPick(o.key)}
-              >
-                <span className="option__index" aria-hidden="true">
-                  {i + 1}
-                </span>
-                <span className="option__box" aria-hidden="true">
-                  <Tick drawn={isOn} />
-                </span>
-                <span className="option__label">{o.label}</span>
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+        <ol className="options" aria-label="Escolha uma opção">
+          {question.options.map((o, i) => {
+            const isOn = active === o.key;
+            const cls = ['option', isOn ? 'is-on' : '', pending === o.key ? 'is-pending' : ''].filter(Boolean).join(' ');
+            return (
+              <li key={o.key}>
+                <button type="button" className={cls} aria-pressed={isOn} onClick={() => onPick(o.key)}>
+                  <span className="option__index" aria-hidden="true">
+                    {i + 1}
+                  </span>
+                  <span className="option__box" aria-hidden="true">
+                    <Tick drawn={isOn} />
+                  </span>
+                  <span className="option__label">{o.label}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
     </section>
   );
 });

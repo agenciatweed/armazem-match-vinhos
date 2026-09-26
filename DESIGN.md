@@ -299,6 +299,13 @@ Cinco quadradinhos de 13px no cabeçalho da ficha: vazios com borda ink-2, preen
 ### Carimbo (assinatura)
 Selo circular em SVG, 92px no celular e 128px a partir de 640px, na cor do perfil: dois anéis, texto circular "ARMAZÉM DOS IMPORTADOS · MATCH 3" em Archivo 600, e um visto no centro. Flutua à direita do nome do perfil, girado -12 graus, e entra com um leve "bater" (escala 1.35 para 1 em 420ms, com atraso de 420ms).
 
+### A ficha que vira trio (coreografia assinatura)
+Continuidade física do começo ao fim, feita com a View Transitions API. O tipo de transição fica em `html[data-vt]` e só os elementos daquele momento recebem `view-transition-name`.
+- **Resposta (`step`):** a caixa marcada voa da linha da opção até o quadradinho do progresso em 560ms. O cabeçalho fica parado. A pergunta sai subindo em 280ms e a próxima entra subindo em 380ms.
+- **Última resposta (`final`):** os quatro quadradinhos do progresso e a caixa da P5 descem para a ficha completa e formam uma fila de cinco vistos, em cascata de 30ms. Na ficha, os vistos se juntam no centro e desaparecem, o carimbo aparece no lugar deles e as três garrafas do trio sobem do prato no pé da ficha.
+- **Revelação (`reveal`):** a ficha completa vira a ficha do perfil. O carimbo viaja até o lado do nome com um "bater" de escala (1 para 1.14 para 1). Cada garrafa voa até o prato do seu cartão, em cascata de 70ms.
+- **Sem suporte a View Transitions, ou com movimento reduzido:** vale a sequência de fades documentada acima. Um momento só: nenhuma outra transição compete com essa.
+
 ### Navigation
 Não há menu. A navegação é o próprio fluxo da ficha: Voltar no cabeçalho da pergunta e o bloco de ações ao final do resultado. No painel, a faixa azul superior leva logo, título em Caslon 28px e contagem em 14px on-navy-2.
 

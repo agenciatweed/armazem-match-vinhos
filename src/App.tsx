@@ -11,6 +11,8 @@ import { clearSession, loadSession, saveSession } from './lib/session.js';
 import { computeProfile, isComplete } from './lib/scoring.js';
 import { selectTrio } from './lib/selection.js';
 import { decodeShare, encodeShare } from './lib/share.js';
+import { runViewTransition, supportsViewTransitions, type VtKind } from './lib/viewTransition.js';
+import { PROFILES } from './data/profiles.js';
 import { answeredCount, initialState, reducer, type QuizState } from './state.js';
 
 const params = new URLSearchParams(window.location.search);
@@ -48,6 +50,9 @@ export default function App() {
   const [phase, setPhase] = useState<'idle' | 'leaving' | 'entering'>('idle');
   const [pending, setPending] = useState<OptionKey | null>(null);
   const [swapping, setSwapping] = useState(false);
+  const [fresh, setFresh] = useState<number | null>(null);
+  const [arrived, setArrived] = useState(false);
+  const vtOn = !reduced && supportsViewTransitions();
   const busy = useRef(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [announce, setAnnounce] = useState('');
@@ -59,11 +64,26 @@ export default function App() {
 
   // Transição de pergunta: seleção 180ms, saída 280ms, entrada 380ms; cliques bloqueados.
   const transition = useCallback(
-    async (commit: () => void, picked: OptionKey | null) => {
+    async (commit: () => void, picked: OptionKey | null, kind: VtKind = 'step', freshIndex: number | null = null) => {
       if (busy.current) return;
       busy.current = true;
       setPending(picked);
       if (picked) await sleep(timing.select);
+      if (vtOn) {
+        // A caixa marcada voa até o quadrado do progresso (ou, na P5, até a ficha completa).
+        await runViewTransition(
+          kind,
+          () => {
+            commit();
+            setPending(null);
+            setFresh(freshIndex);
+          },
+          true,
+        );
+        setFresh(null);
+        busy.current = false;
+        return;
+      }
       setPhase('leaving');
       await sleep(timing.out);
       commit();
@@ -73,14 +93,20 @@ export default function App() {
       setPhase('idle');
       busy.current = false;
     },
-    [timing.select, timing.out, timing.in],
+    [timing.select, timing.out, timing.in, vtOn],
   );
 
   const question = QUESTIONS[state.step];
 
   const pick = useCallback(
-    (key: OptionKey) => transition(() => dispatch({ type: 'ANSWER', questionId: question.id, key }), key),
-    [transition, question.id],
+    (key: OptionKey) =>
+      transition(
+        () => dispatch({ type: 'ANSWER', questionId: question.id, key }),
+        key,
+        state.step === 4 ? 'final' : 'step',
+        state.step === 4 ? null : state.step,
+      ),
+    [transition, question.id, state.step],
   );
   const back = useCallback(() => transition(() => dispatch({ type: 'BACK' }), null), [transition]);
 
@@ -122,7 +148,17 @@ export default function App() {
       };
       void saveLead(payload).then((ok) => dispatch(ok ? { type: 'LEAD_SAVED' } : { type: 'LEAD_FAILED', payload }));
     }
-    const t = setTimeout(() => dispatch({ type: 'FINISH_LOADING' }), timing.loading);
+    const t = setTimeout(() => {
+      // Revelação: a ficha vira o perfil, o carimbo assenta e as garrafas vão para os cards.
+      void runViewTransition(
+        'reveal',
+        () => {
+          setArrived(vtOn);
+          dispatch({ type: 'FINISH_LOADING' });
+        },
+        vtOn,
+      );
+    }, timing.loading);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.screen]);
@@ -194,7 +230,7 @@ export default function App() {
         onConfirm={(email) => {
           dispatch({ type: 'CONFIRM_AGE', email });
           if (state.source === 'shared') dispatch({ type: 'LOAD_SHARED', answers: state.answers, rotation: state.rotation });
-          else dispatch({ type: 'START' });
+          else void runViewTransition('sheet', () => dispatch({ type: 'START' }), vtOn);
         }}
         onChangeEmail={() => dispatch({ type: 'CHANGE_EMAIL' })}
       />
@@ -209,12 +245,15 @@ export default function App() {
         pending={pending}
         phase={phase}
         answered={answeredCount(state.answers)}
+        fresh={fresh}
         onPick={pick}
         onBack={state.step > 0 ? back : null}
       />
     );
   } else if (state.screen === 'loading') {
-    body = <Loading durationMs={timing.loading} />;
+    body = result ? (
+      <Loading durationMs={timing.loading} accent={PROFILES[result.profileId].accent} trio={trio} />
+    ) : null;
   } else if (result) {
     body = (
       <Result
@@ -223,6 +262,7 @@ export default function App() {
         shared={state.source === 'shared'}
         storeMode={STORE_MODE}
         swapping={swapping}
+        arrived={arrived}
         onNextTrio={nextTrio}
         onRestart={() => leaveToIntro(false)}
         onDiscoverOwn={() => leaveToIntro(true)}

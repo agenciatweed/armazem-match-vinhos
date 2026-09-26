@@ -18,7 +18,7 @@ export function Intro({ shared, storeMode, savedEmail, onConfirm, onChangeEmail 
 
   if (minor) {
     return (
-      <section className="sheet sheet--intro" aria-labelledby="minor-title">
+      <section className="sheet sheet--main sheet--intro" aria-labelledby="minor-title">
         <div className="sheet__rule" aria-hidden="true" />
         <h1 id="minor-title" className="display display--m" tabIndex={-1}>
           Volte quando fizer 18. A gente guarda uma taça para você.
@@ -39,7 +39,7 @@ export function Intro({ shared, storeMode, savedEmail, onConfirm, onChangeEmail 
   };
 
   return (
-    <section className="sheet sheet--intro" aria-labelledby="intro-title">
+    <section className="sheet sheet--main sheet--intro" aria-labelledby="intro-title">
       <div className="sheet__rule" aria-hidden="true" />
       <h1 id="intro-title" className="display display--xl" tabIndex={-1}>
         Descubra seu match em 60&nbsp;segundos

@@ -13,13 +13,14 @@ interface Props {
   shared: boolean;
   storeMode: boolean;
   swapping: boolean;
+  arrived: boolean;
   onNextTrio: () => void;
   onRestart: () => void;
   onDiscoverOwn: () => void;
   onInteract: () => void;
 }
 
-export function Result({ result, trio, shared, storeMode, swapping, onNextTrio, onRestart, onDiscoverOwn, onInteract }: Props) {
+export function Result({ result, trio, shared, storeMode, swapping, arrived, onNextTrio, onRestart, onDiscoverOwn, onInteract }: Props) {
   const profile = PROFILES[result.profileId];
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [shareMsg, setShareMsg] = useState('');
@@ -54,8 +55,8 @@ export function Result({ result, trio, shared, storeMode, swapping, onNextTrio, 
   }
 
   return (
-    <div className="result">
-      <section className="sheet sheet--profile" aria-labelledby="profile-title" style={{ ['--accent' as string]: profile.accent }}>
+    <div className={arrived ? 'result result--arrived' : 'result'}>
+      <section className="sheet sheet--main sheet--profile" aria-labelledby="profile-title" style={{ ['--accent' as string]: profile.accent }}>
         <div className="sheet__rule" aria-hidden="true" />
         <Stamp color={profile.accent} />
         <h1 id="profile-title" ref={titleRef} tabIndex={-1} className="profile__title">
