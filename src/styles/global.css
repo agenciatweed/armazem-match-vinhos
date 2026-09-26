@@ -585,13 +585,13 @@ button {
   shape-outside: circle(50%);
   opacity: 0.92;
   transform: rotate(-12deg);
-  animation: stamp 460ms cubic-bezier(0.3, 1.4, 0.5, 1) 420ms both;
+  animation: stamp 420ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
 }
 
 @keyframes stamp {
   from {
     opacity: 0;
-    transform: rotate(-4deg) scale(1.7);
+    transform: rotate(-4deg) scale(1.35);
   }
 }
 
