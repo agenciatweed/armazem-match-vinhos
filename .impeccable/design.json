@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T08:57:59.881Z",
+  "title": "Design System: Match do Vinho",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Azul Armazém",
+        "canonical": "#00273c",
+        "tonalRamp": [
+          "#000f18",
+          "#001a28",
+          "#00273c",
+          "#123e57",
+          "#2f5b74",
+          "#5a8098",
+          "#98b4c6",
+          "#dde8ef"
+        ]
+      },
+      "navy-raised": {
+        "role": "primary",
+        "displayName": "Azul Armazém Elevado",
+        "canonical": "#0b3a55",
+        "tonalRamp": [
+          "#021824",
+          "#07283b",
+          "#0b3a55",
+          "#1d5070",
+          "#3b6d8c",
+          "#6893ae",
+          "#a5c0d2",
+          "#e1ecf3"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#1f2428",
+          "#3c444a",
+          "#5f6a72",
+          "#88939b",
+          "#b3bcc2",
+          "#d9dfe3",
+          "#f1f4f6",
+          "#ffffff"
+        ]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Prato",
+        "canonical": "#edf1f4",
+        "tonalRamp": [
+          "#1d2429",
+          "#36414a",
+          "#56636d",
+          "#7c8a94",
+          "#a6b2bb",
+          "#cdd6dd",
+          "#dfe6eb",
+          "#edf1f4"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Tinta",
+        "canonical": "#00273c",
+        "tonalRamp": [
+          "#000f18",
+          "#001a28",
+          "#00273c",
+          "#123e57",
+          "#2f5b74",
+          "#5a8098",
+          "#98b4c6",
+          "#dde8ef"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Tinta Secundária",
+        "canonical": "#4a6273",
+        "tonalRamp": [
+          "#141c22",
+          "#243441",
+          "#354a5a",
+          "#4a6273",
+          "#687f8f",
+          "#8fa2b0",
+          "#bac7d0",
+          "#e4eaee"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Pauta",
+        "canonical": "#c7d3dc",
+        "tonalRamp": [
+          "#1c252b",
+          "#35444f",
+          "#546673",
+          "#768a98",
+          "#9aacb9",
+          "#c7d3dc",
+          "#dde5eb",
+          "#f1f5f8"
+        ]
+      },
+      "hover": {
+        "role": "neutral",
+        "displayName": "Hover",
+        "canonical": "#f1f5f8",
+        "tonalRamp": [
+          "#1c252b",
+          "#35444f",
+          "#546673",
+          "#768a98",
+          "#9aacb9",
+          "#c7d3dc",
+          "#dde5eb",
+          "#f1f5f8"
+        ]
+      },
+      "on-navy": {
+        "role": "neutral",
+        "displayName": "Branco sobre azul",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "rgba(255,255,255,0.14)",
+          "rgba(255,255,255,0.3)",
+          "rgba(255,255,255,0.45)",
+          "rgba(255,255,255,0.6)",
+          "rgba(255,255,255,0.66)",
+          "rgba(255,255,255,0.78)",
+          "rgba(255,255,255,0.9)",
+          "#ffffff"
+        ]
+      },
+      "on-navy-2": {
+        "role": "neutral",
+        "displayName": "Branco sobre azul, apoio",
+        "canonical": "rgba(255, 255, 255, 0.78)",
+        "tonalRamp": []
+      },
+      "on-navy-3": {
+        "role": "neutral",
+        "displayName": "Branco sobre azul, nota",
+        "canonical": "rgba(255, 255, 255, 0.66)",
+        "tonalRamp": []
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Vermelho de Campo",
+        "canonical": "#8a1f1f",
+        "tonalRamp": [
+          "#2a0909",
+          "#4a1010",
+          "#6a1717",
+          "#8a1f1f",
+          "#aa4040",
+          "#c77070",
+          "#e0a8a8",
+          "#f6e1e1"
+        ]
+      },
+      "profile-fresco": {
+        "role": "secondary",
+        "displayName": "Fresco & Cítrico",
+        "canonical": "#2F6B5E",
+        "tonalRamp": [
+          "#0c1f1b",
+          "#173a33",
+          "#22544a",
+          "#2f6b5e",
+          "#4d8a7c",
+          "#78ab9f",
+          "#abcdc5",
+          "#e1efeb"
+        ]
+      },
+      "profile-floral": {
+        "role": "secondary",
+        "displayName": "Floral & Aromático",
+        "canonical": "#7A4E7E",
+        "tonalRamp": [
+          "#221524",
+          "#3a263c",
+          "#573a5a",
+          "#7a4e7e",
+          "#976e9b",
+          "#b595b8",
+          "#d5c0d7",
+          "#f1e8f2"
+        ]
+      },
+      "profile-frutado": {
+        "role": "secondary",
+        "displayName": "Frutado & Macio",
+        "canonical": "#A13D3B",
+        "tonalRamp": [
+          "#2c1010",
+          "#4f1d1c",
+          "#772c2a",
+          "#a13d3b",
+          "#bd605e",
+          "#d48c8a",
+          "#e8bcbb",
+          "#f8e6e6"
+        ]
+      },
+      "profile-seco": {
+        "role": "secondary",
+        "displayName": "Seco & Elegante",
+        "canonical": "#3B3A36",
+        "tonalRamp": [
+          "#121210",
+          "#22211f",
+          "#3b3a36",
+          "#56554f",
+          "#75746d",
+          "#9a9992",
+          "#c3c2bc",
+          "#ebeae6"
+        ]
+      },
+      "profile-fora": {
+        "role": "secondary",
+        "displayName": "Fora da Curva",
+        "canonical": "#B8652A",
+        "tonalRamp": [
+          "#2e180a",
+          "#522c12",
+          "#83461c",
+          "#b8652a",
+          "#cc844f",
+          "#dca57e",
+          "#ecc9b0",
+          "#f9ece2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-hero": {
+        "displayName": "Display Hero",
+        "purpose": "Só o nome do perfil no resultado, na cor do perfil."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Título da intro."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Enunciado de cada pergunta."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de fichas secundárias (loja, menor de idade, interstício)."
+      },
+      "voice": {
+        "displayName": "Voice",
+        "purpose": "Falas da loja em Caslon Text itálico: \"Você é\", tagline, subtítulo do MATCH 3."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Parágrafo de abertura da intro, em ink-2."
+      },
+      "entry": {
+        "displayName": "Entry",
+        "purpose": "Respostas escritas nos campos do cartão de vinho."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto de interface e corrido."
+      },
+      "body-long": {
+        "displayName": "Body Long",
+        "purpose": "Descrição do perfil e texto da loja, até 62ch."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Rótulo de botões."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rótulos de campo, cabeçalhos de ficha, faixas de vinho e colunas do painel; caixa alta, largura 78%."
+      }
+    },
+    "shadows": [
+      {
+        "name": "folha-pousada",
+        "value": "0 1px 0 rgba(0, 0, 0, 0.12), 0 24px 48px -24px rgba(0, 10, 20, 0.6)",
+        "purpose": "Fichas brancas sobre o campo azul."
+      },
+      {
+        "name": "cartao-pousado",
+        "value": "0 24px 48px -28px rgba(0, 10, 20, 0.7)",
+        "purpose": "Cartões de vinho do trio."
+      },
+      {
+        "name": "moldura-interna",
+        "value": "outline: 1px solid var(--rule); outline-offset: -7px (-9px a partir de 640px)",
+        "purpose": "Moldura impressa dentro da ficha."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entradas e mudanças de estado (160ms botões, 140ms opções, 380ms entrada de ficha)."
+      },
+      {
+        "name": "ease-in",
+        "value": "cubic-bezier(0.55, 0, 1, 0.45)",
+        "purpose": "Saídas da ficha e do trio (280ms, sobe 8px)."
+      },
+      {
+        "name": "tick-draw",
+        "value": "stroke-dashoffset 170ms ease-out",
+        "purpose": "Visto de tinta desenhado na caixa ao marcar."
+      },
+      {
+        "name": "stamp",
+        "value": "420ms ease-out, atraso 420ms, escala 1.35 para 1, rotação -4 para -12 graus",
+        "purpose": "Carimbo do resultado."
+      },
+      {
+        "name": "wine-cascade",
+        "value": "rise 380ms, atraso i * 120ms + 200ms",
+        "purpose": "Entrada em cascata dos cartões de vinho."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animações 120ms sem deslocamento; carimbo sem animação",
+        "purpose": "prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão cheio",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Ação principal de cada ficha.",
+      "html": "<button class=\"ds-btn-ink\">Tenho 18 anos ou mais, vamos lá</button>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;border:1.5px solid transparent;border-radius:2px;background:var(--navy,#00273c);color:var(--paper,#fff);font:600 16px/1.2 'Archivo',system-ui,sans-serif;letter-spacing:.01em;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-ink:hover{background:var(--navy-raised,#0b3a55)}.ds-btn-ink:focus-visible{outline:2px solid #00273c;outline-offset:3px}"
+    },
+    {
+      "name": "Botão contorno",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Ação secundária dentro da ficha.",
+      "html": "<button class=\"ds-btn-line\">Como chegar</button>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;border:1.5px solid var(--ink,#00273c);border-radius:2px;background:transparent;color:var(--ink,#00273c);font:600 16px/1.2 'Archivo',system-ui,sans-serif;letter-spacing:.01em;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-line:hover{background:var(--ink,#00273c);color:var(--paper,#fff)}.ds-btn-line:focus-visible{outline:2px solid #00273c;outline-offset:3px}"
+    },
+    {
+      "name": "Botão papel e fantasma (sobre o azul)",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Ações fora da ficha, direto no campo azul.",
+      "html": "<div class=\"ds-onnavy\"><button class=\"ds-btn-paper\">Ver outro trio</button><button class=\"ds-btn-ghost\">Refazer o quiz</button></div>",
+      "css": ".ds-onnavy{display:flex;gap:12px;padding:24px;background:#00273c}.ds-btn-paper,.ds-btn-ghost{min-height:56px;padding:0 24px;border:1.5px solid transparent;border-radius:2px;font:600 16px/1.2 'Archivo',system-ui,sans-serif;letter-spacing:.01em;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),border-color 160ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-paper{background:#fff;color:#00273c}.ds-btn-paper:hover{background:#f1f5f8}.ds-btn-ghost{border-color:rgba(255,255,255,.6);background:transparent;color:#fff}.ds-btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}.ds-btn-paper:focus-visible,.ds-btn-ghost:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Campo pautado",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Campo de texto sem caixa, só sublinhado de tinta.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Seu e-mail</span><input class=\"ds-field__input\" type=\"email\" placeholder=\"voce@email.com\"></label>",
+      "css": ".ds-field{display:grid;gap:6px;padding:20px;background:#fff}.ds-field__label{font:700 12px/1.3 'Archivo',sans-serif;font-stretch:78%;letter-spacing:.14em;text-transform:uppercase;color:#00273c}.ds-field__input{min-height:56px;padding:10px 2px;border:0;border-bottom:2px solid #00273c;border-radius:0;background:transparent;color:#00273c;font:500 20px/1.2 'Archivo',sans-serif}.ds-field__input::placeholder{color:#4a6273;font-weight:400}.ds-field__input:focus{outline:none;box-shadow:0 2px 0 #00273c}.ds-field__input:focus-visible{outline:2px solid #00273c;outline-offset:4px}"
+    },
+    {
+      "name": "Opção com caixa de marcação",
+      "kind": "custom",
+      "refersTo": "option",
+      "description": "Linha pautada numerada; marcar desenha o visto e inverte a linha.",
+      "html": "<div class=\"ds-options\"><button class=\"ds-option\"><span class=\"ds-option__i\">1</span><span class=\"ds-option__box\"></span><span>Sushi no balcão</span></button><button class=\"ds-option is-on\"><span class=\"ds-option__i\">2</span><span class=\"ds-option__box\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\"><path d=\"M4.5 12.8c1.6 1.2 3.1 2.9 4.4 5.2C11.6 11.4 15.4 6.9 20 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Costela no fogo de chão</span></button></div>",
+      "css": ".ds-options{background:#fff;border-top:1px solid #c7d3dc}.ds-option{display:grid;grid-template-columns:14px 26px 1fr;align-items:center;gap:12px;width:100%;min-height:60px;padding:12px 12px 12px 10px;border:0;border-bottom:1px solid #c7d3dc;background:transparent;color:#00273c;font:17px/1.3 'Archivo',sans-serif;text-align:left;cursor:pointer;transition:background-color 140ms cubic-bezier(0.16,1,0.3,1),color 140ms cubic-bezier(0.16,1,0.3,1)}.ds-option:hover{background:#f1f5f8}.ds-option__i{font:600 13px 'Archivo',sans-serif;font-stretch:78%;color:#4a6273}.ds-option__box{display:grid;place-items:center;width:26px;height:26px;border:1.5px solid #00273c;background:#fff;color:#00273c}.ds-option.is-on{background:#00273c;color:#fff}.ds-option.is-on .ds-option__i{color:rgba(255,255,255,.72)}.ds-option.is-on .ds-option__box{border-color:#fff;background:#00273c;color:#fff}.ds-option:focus-visible{outline:2px solid #00273c;outline-offset:-2px}"
+    },
+    {
+      "name": "Progresso em quadradinhos",
+      "kind": "custom",
+      "refersTo": "option",
+      "description": "Cinco caixas de formulário no cabeçalho da ficha.",
+      "html": "<div class=\"ds-progress\"><span class=\"d\"></span><span class=\"d\"></span><span class=\"c\"></span><span></span><span></span><b>3 DE 5</b></div>",
+      "css": ".ds-progress{display:flex;align-items:center;gap:5px;padding:16px;background:#fff;font:600 12px 'Archivo',sans-serif;font-stretch:78%;letter-spacing:.14em;color:#00273c}.ds-progress span{width:13px;height:13px;border:1.5px solid #4a6273;box-sizing:border-box}.ds-progress .d{border-color:#00273c;background:#00273c}.ds-progress .c{border:2px solid #00273c;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 7px #c7d3dc}.ds-progress b{margin-left:5px;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Ficha",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "Cartão branco com moldura interna, fio de abertura e colofão.",
+      "html": "<div class=\"ds-stage\"><section class=\"ds-sheet\"><div class=\"ds-sheet__rule\"></div><h1 class=\"ds-sheet__title\">Descubra seu match em 60 segundos</h1><p class=\"ds-sheet__lede\">Cinco perguntas sobre você. Nenhuma sobre vinho.</p><p class=\"ds-sheet__colophon\">Ficha de paladar · Match do Vinho</p></section></div>",
+      "css": ".ds-stage{padding:24px;background:#00273c}.ds-sheet{background:#fff;color:#00273c;border-radius:3px;padding:22px 40px 40px;box-shadow:0 1px 0 rgba(0,0,0,.12),0 24px 48px -24px rgba(0,10,20,.6);outline:1px solid #c7d3dc;outline-offset:-9px}.ds-sheet__rule{margin:8px 0 30px;border-bottom:1.5px solid #00273c}.ds-sheet__title{margin:0;font:400 44px/1.02 'Libre Caslon Display',Georgia,serif;letter-spacing:-.012em}.ds-sheet__lede{margin:16px 0 0;font:18.5px/1.5 'Libre Caslon Text',Georgia,serif;color:#4a6273}.ds-sheet__colophon{margin:28px 0 0;padding-top:10px;border-top:1px solid #c7d3dc;font:600 11px 'Archivo',sans-serif;font-stretch:78%;letter-spacing:.14em;text-transform:uppercase;color:#4a6273}"
+    },
+    {
+      "name": "Cartão de vinho",
+      "kind": "card",
+      "refersTo": "wine-card",
+      "description": "Faixa de posição, prato da garrafa, campos pautados e preço.",
+      "html": "<div class=\"ds-stage2\"><article class=\"ds-wine\"><header class=\"ds-wine__tier\"><h3>O SEGURO</h3><p>Perto do que você já conhece.</p></header><div class=\"ds-wine__plate\"></div><div class=\"ds-wine__body\"><h4>Alain Brumont Madiran Torus</h4><dl><dt>Por que dá match</dt><dd>Firme, seco e sério.</dd></dl></div><p class=\"ds-wine__price\"><span>Preço de referência</span><strong>R$ 315,00</strong></p></article></div>",
+      "css": ".ds-stage2{padding:24px;background:#00273c}.ds-wine{max-width:320px;background:#fff;color:#00273c;border-radius:3px;overflow:hidden;box-shadow:0 24px 48px -28px rgba(0,10,20,.7);font-family:'Archivo',sans-serif}.ds-wine__tier{padding:16px 20px 12px;border-bottom:1.5px solid #00273c}.ds-wine__tier h3{margin:0;font-size:13px;font-stretch:78%;font-weight:700;letter-spacing:.16em}.ds-wine__tier p{margin:2px 0 0;font-size:13px;color:#4a6273}.ds-wine__plate{height:120px;background:#edf1f4}.ds-wine__body{padding:18px 20px 8px}.ds-wine__body h4{margin:0 0 6px;font:400 22px/1.2 'Libre Caslon Text',serif}.ds-wine__body dl{margin:16px 0 0}.ds-wine__body dt{padding-top:10px;border-top:1px solid #c7d3dc;font-size:11px;font-stretch:78%;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4a6273}.ds-wine__body dd{margin:3px 0 10px;font:16px/1.45 'Libre Caslon Text',serif}.ds-wine__price{display:flex;justify-content:space-between;align-items:baseline;margin:0;padding:14px 20px 16px;border-top:1.5px solid #00273c}.ds-wine__price span{font-size:12px;color:#4a6273}.ds-wine__price strong{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Carimbo de perfil",
+      "kind": "custom",
+      "refersTo": "profile-seco",
+      "description": "Selo circular na cor do perfil que confere a ficha.",
+      "html": "<svg class=\"ds-stamp\" viewBox=\"0 0 120 120\" style=\"color:#3B3A36\"><defs><path id=\"ds-ring\" d=\"M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0\"/></defs><circle cx=\"60\" cy=\"60\" r=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><circle cx=\"60\" cy=\"60\" r=\"32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text fill=\"currentColor\" font-size=\"10.5\" letter-spacing=\"2.2\" font-family=\"Archivo, sans-serif\" font-weight=\"600\"><textPath href=\"#ds-ring\">ARMAZÉM DOS IMPORTADOS · MATCH 3 ·</textPath></text><path d=\"M44 61c4 3 7 7 10 12 6-13 13-21 22-27\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+      "css": ".ds-stamp{width:128px;height:128px;opacity:.92;transform:rotate(-12deg);background:#fff}"
+    },
+    {
+      "name": "Livro-razão do painel",
+      "kind": "custom",
+      "refersTo": "admin-control",
+      "description": "Tabela pautada da equipe, com bolinha na cor do perfil.",
+      "html": "<table class=\"ds-ledger\"><thead><tr><th>E-mail</th><th>Perfil</th><th>O seguro</th></tr></thead><tbody><tr><td><b>cliente@email.com</b></td><td><span class=\"ds-pill\" style=\"--accent:#3B3A36\">Seco &amp; Elegante</span></td><td class=\"ds-wn\">Alain Brumont Madiran Torus</td></tr></tbody></table>",
+      "css": ".ds-ledger{width:100%;border-collapse:collapse;background:#fff;color:#00273c;font:14px 'Archivo',sans-serif}.ds-ledger th{padding:10px 12px;border-bottom:1.5px solid #00273c;font-size:11px;font-stretch:78%;font-weight:700;letter-spacing:.14em;text-align:left;text-transform:uppercase;color:#4a6273}.ds-ledger td{padding:12px;border-bottom:1px solid #c7d3dc}.ds-ledger tbody tr:hover td{background:#f1f5f8}.ds-pill{display:inline-flex;align-items:center;gap:7px}.ds-pill::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}.ds-wn{font:15px/1.3 'Libre Caslon Text',serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Ficha de Prova do Armazém",
+    "overview": "Tudo acontece sobre o azul do Armazém (#00273c), que ocupa regiões inteiras da tela e nunca serve só de acento. Sobre esse campo pousa uma ficha impressa em cartão branco puro, com moldura fina interna, pautas azuis, caixas de marcação quadradas e campos numerados. O visitante preenche a ficha à mão: marcar uma opção desenha um visto de tinta na caixa, e o resultado sai conferido por um carimbo circular. A voz tipográfica é a do impresso de loja antiga: Caslon para o que é dito, Archivo condensado para o que é rótulo de formulário.\n\nA densidade é de formulário, não de revista: uma pergunta por ficha no celular, linhas de opção altas (60px), pautas de 1px e fios de 1.5px separando cabeçalho e rodapé. O painel da equipe herda o mesmo mundo em modo de operação: fundo branco, faixa azul no topo, tabela pautada como livro-razão, sem animação de entrada.\n\nO sistema recusa o quiz de cards coloridos com barra de progresso, a \"carta de vinhos\" creme com serifa e qualquer linguagem de supermercado (selos, vermelho promocional, preço riscado, confete).",
+    "keyCharacteristics": [
+      "Campo azul dominante; o branco aparece como papel, não como fundo de página.",
+      "Ficha com moldura interna fina (outline de 1px recuado 7px, 9px em telas maiores).",
+      "Pautas finas (#c7d3dc, 1px) para linhas; fios de tinta (1.5px) para abrir e fechar blocos.",
+      "Caixas de marcação quadradas, sem cantos arredondados, com visto desenhado em SVG.",
+      "Rótulos em Archivo condensado (largura 78%), caixa alta, espaçamento 0.14em.",
+      "Cor de perfil só no resultado: nome do perfil, carimbo e bolinhas do painel."
+    ],
+    "rules": [
+      {
+        "name": "The Blue Field Rule",
+        "body": "O azul é território, não detalhe: no quiz ele ocupa o fundo inteiro e o conteúdo principal pousa nele como papel. No painel, o azul fica restrito à faixa superior e à tinta.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Is Brand Rule",
+        "body": "Não existe preto no sistema. Toda tinta sobre papel é o próprio azul da marca (#00273c); texto secundário é ink-2.",
+        "section": "colors"
+      },
+      {
+        "name": "The Profile Colors Stay In The Result Rule",
+        "body": "As cores de perfil só aparecem depois que o perfil foi atribuído (resultado e painel). Antes disso, a ficha é só azul e branco.",
+        "section": "colors"
+      },
+      {
+        "name": "The Printed Form Rule",
+        "body": "Caixa alta existe só em Archivo condensado, em tamanho de rótulo (11 a 13px), nomeando um campo ou uma coluna. Nunca em Caslon, nunca em texto corrido.",
+        "section": "typography"
+      },
+      {
+        "name": "The Caslon Speaks Rule",
+        "body": "Quando a loja fala com a pessoa (títulos, taglines, respostas do cartão), é Caslon. Quando o sistema organiza (rótulos, botões, metadados), é Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper On The Table Rule",
+        "body": "Sombra só existe onde papel encontra o azul, e é sempre difusa e deslocada para baixo. Nada dentro da ficha é elevado; o painel, que já é papel, é totalmente plano.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar o azul #00273c como campo inteiro de fundo no quiz e como tinta de todo texto sobre papel.",
+      "Do apoiar todo conteúdo principal do quiz em fichas brancas com moldura interna de 1px e sombra de folha pousada.",
+      "Do separar itens com pauta de 1px (#c7d3dc) e abrir ou fechar blocos com fio de tinta de 1.5px.",
+      "Do manter caixas de marcação, campos e controles com canto zero; ficha e cartão com 3px; botões com 2px.",
+      "Do escrever rótulos em Archivo condensado (largura 78%), 11 a 13px, caixa alta, 0.14em, e títulos em Caslon Display peso 400.",
+      "Do usar algarismos tabulares em preço, temperatura, progresso e datas.",
+      "Do manter alvos de toque com no mínimo 44px, e 56px para botão e campo principais.",
+      "Do usar ease-out cubic-bezier(0.16, 1, 0.3, 1) para entradas e ease-in cubic-bezier(0.55, 0, 1, 0.45) para saídas, com deslocamento de 8px; reduzir para fade de 120ms com prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't usar preto, cinza neutro ou creme; toda tinta é azul da marca e todo papel é branco puro.",
+      "Don't usar cores de perfil antes do resultado, em texto corrido, botões ou fundos.",
+      "Don't usar vermelho promocional, selos, preço riscado, contagem regressiva ou confete; o vermelho escuro é exclusivo de erro de campo.",
+      "Don't usar cards coloridos por opção ou barra de progresso contínua; progresso são quadradinhos de formulário.",
+      "Don't colocar rótulo em caixa alta acima de títulos como sobretítulo; caixa alta nomeia campo, coluna ou colofão, nunca anuncia uma seção.",
+      "Don't elevar nada dentro do papel nem usar sombras duras deslocadas; sombra só entre papel e azul.",
+      "Don't usar travessão ou meia-risca em texto visível."
+    ]
+  }
+}
