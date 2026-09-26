@@ -1,0 +1,27 @@
+:root {
+  /* Marca: azul do Armazém e branco. */
+  --navy: #00273c;
+  --navy-raised: #0b3a55;
+  --paper: #ffffff;
+  --plate: #edf1f4;
+  --ink: #00273c;
+  --ink-2: #4a6273;
+  --rule: #c7d3dc;
+  --hover: #f1f5f8;
+  --on-navy: #ffffff;
+  --on-navy-2: rgba(255, 255, 255, 0.78);
+  --on-navy-3: rgba(255, 255, 255, 0.66);
+  --error: #8a1f1f;
+
+  --font-display: 'Libre Caslon Display', 'Libre Caslon Text', Georgia, serif;
+  --font-text: 'Libre Caslon Text', Georgia, serif;
+  --font-ui: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius: 3px;
+  --maxw-quiz: 560px;
+  --maxw-result: 1080px;
+  --gutter: 16px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+}

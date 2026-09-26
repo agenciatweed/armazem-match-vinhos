@@ -1,0 +1,63 @@
+# Copia os matches registrados no site para o branch "dados" deste repositório.
+# Usa só o GITHUB_TOKEN automático do Actions; nenhuma chave precisa ser criada.
+name: Backup dos matches
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backup-matches
+  cancel-in-progress: false
+
+env:
+  SITE_URL: https://armazem-match-vinhos.vercel.app
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar matches do site
+        run: |
+          set -euo pipefail
+          mkdir -p out/data
+          curl -fsS --retry 3 "$SITE_URL/api/leads" -o out/data/matches.json
+          curl -fsS --retry 3 "$SITE_URL/api/leads?format=csv" -o out/data/matches.csv
+          jq -e '.leads | type == "array"' out/data/matches.json > /dev/null
+          jq '.leads' out/data/matches.json > out/data/matches.tmp && mv out/data/matches.tmp out/data/matches.json
+          echo "Matches: $(jq length out/data/matches.json)"
+
+      - name: Gravar no branch dados
+        run: |
+          set -euo pipefail
+          git init -q repo && cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          if git ls-remote --exit-code --heads origin dados > /dev/null; then
+            git fetch -q --depth 1 origin dados && git checkout -q -b dados FETCH_HEAD
+          else
+            git checkout -q --orphan dados
+          fi
+          mkdir -p data
+          cp ../out/data/matches.json ../out/data/matches.csv data/
+          cat > README.md <<'MD'
+          # Dados do Match do Vinho
+
+          Cópia automática (a cada 30 minutos) dos matches registrados no site.
+          Contém e-mails: mantenha este repositório privado.
+
+          - `data/matches.json`: registros completos
+          - `data/matches.csv`: planilha (abre no Excel)
+          MD
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sem mudanças."
+          else
+            git commit -q -m "Backup dos matches $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push -q origin dados
+          fi
