@@ -1,0 +1,238 @@
+[
+  {
+    "id": "8f53ac7f-358b-427c-891d-03d2b436fe9b",
+    "email": "tweed@agenciatweed.com.br",
+    "profileId": "curva",
+    "profileName": "Fora da Curva",
+    "corpoLevel": 1,
+    "answersKey": "q1:b|q2:d|q3:e|q4:e|q5:b",
+    "shareCode": "bdeeb-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-26T09:20:08.440Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "branco",
+            "wineId": "curva-branco-5",
+            "nome": "Quinta dos Roques Encruzado",
+            "tipo": "branco",
+            "precoReferencia": 348
+          },
+          {
+            "tier": "descoberta",
+            "slot": "tinto",
+            "wineId": "curva-tinto-2",
+            "nome": "Anselmo Mendes Pardusco",
+            "tipo": "tinto",
+            "precoReferencia": 225
+          },
+          {
+            "tier": "surpresa",
+            "slot": "adicional",
+            "wineId": "curva-adicional-6",
+            "nome": "Villard Pinot Grigio Ramato",
+            "tipo": "laranja",
+            "precoReferencia": 274
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-26T09:20:08.440Z",
+    "updatedAt": "2026-09-26T09:20:08.440Z"
+  },
+  {
+    "id": "91a2bb05-e989-4ee5-8481-56ed04364464",
+    "email": "felipe@agenciatweed.com.br",
+    "profileId": "fresco",
+    "profileName": "Fresco & Cítrico",
+    "corpoLevel": 1,
+    "answersKey": "q1:e|q2:e|q3:a|q4:c|q5:a",
+    "shareCode": "eeaca-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-26T09:09:25.910Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "branco",
+            "wineId": "fresco-branco-6",
+            "nome": "Marqués de Toledo Verdejo",
+            "tipo": "branco",
+            "precoReferencia": 118
+          },
+          {
+            "tier": "descoberta",
+            "slot": "adicional",
+            "wineId": "fresco-adicional-1",
+            "nome": "Hermann Lírica Brut",
+            "tipo": "espumante",
+            "precoReferencia": 142
+          },
+          {
+            "tier": "surpresa",
+            "slot": "tinto",
+            "wineId": "fresco-tinto-1",
+            "nome": "Marc Jambon Beaujolais-Villages",
+            "tipo": "tinto",
+            "precoReferencia": 204
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-26T09:09:25.910Z",
+    "updatedAt": "2026-09-26T09:09:25.910Z"
+  },
+  {
+    "id": "37af0143-9fa9-4aa8-b57c-b230db71cde8",
+    "email": "feliperijo@gmail.com",
+    "profileId": "floral",
+    "profileName": "Floral & Aromático",
+    "corpoLevel": 1,
+    "answersKey": "q1:d|q2:c|q3:b|q4:a|q5:b",
+    "shareCode": "dcbab-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-26T09:06:30.218Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "branco",
+            "wineId": "floral-branco-1",
+            "nome": "Alta-Yarí Torrontés",
+            "tipo": "branco",
+            "precoReferencia": 110
+          },
+          {
+            "tier": "descoberta",
+            "slot": "adicional",
+            "wineId": "floral-adicional-4",
+            "nome": "José Maria da Fonseca Alambre Moscatel de Setúbal",
+            "tipo": "porto",
+            "precoReferencia": 198
+          },
+          {
+            "tier": "surpresa",
+            "slot": "tinto",
+            "wineId": "floral-tinto-2",
+            "nome": "Villard Pinot Noir Expresión",
+            "tipo": "tinto",
+            "precoReferencia": 199
+          }
+        ]
+      },
+      {
+        "rotation": 1,
+        "shownAt": "2026-09-26T09:07:27.787Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "branco",
+            "wineId": "floral-branco-2",
+            "nome": "Eugen Müller Riesling Kabinett",
+            "tipo": "branco",
+            "precoReferencia": 227
+          },
+          {
+            "tier": "descoberta",
+            "slot": "adicional",
+            "wineId": "floral-adicional-1",
+            "nome": "José Maria da Fonseca Roxo Rosé",
+            "tipo": "rose",
+            "precoReferencia": 239
+          },
+          {
+            "tier": "surpresa",
+            "slot": "tinto",
+            "wineId": "floral-tinto-1",
+            "nome": "Marc Jambon Morgon Les Charmes",
+            "tipo": "tinto",
+            "precoReferencia": 350
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-26T09:06:30.218Z",
+    "updatedAt": "2026-09-26T09:07:27.787Z"
+  },
+  {
+    "id": "0f0e0d0c-0b0a-4908-8706-050403020100",
+    "email": "teste-deploy@armazem.com",
+    "profileId": "elegante",
+    "profileName": "Seco & Elegante",
+    "corpoLevel": 3,
+    "answersKey": "q1:a|q2:c|q3:d|q4:b|q5:e",
+    "shareCode": "acdbe-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-26T08:46:10.027Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "tinto",
+            "wineId": "elegante-tinto-5",
+            "nome": "Alain Brumont Madiran Torus",
+            "tipo": "tinto",
+            "precoReferencia": 315
+          },
+          {
+            "tier": "descoberta",
+            "slot": "branco",
+            "wineId": "elegante-branco-5",
+            "nome": "Louis Latour Mâcon-Lugny Les Genièvres",
+            "tipo": "branco",
+            "precoReferencia": 298
+          },
+          {
+            "tier": "surpresa",
+            "slot": "adicional",
+            "wineId": "elegante-adicional-1",
+            "nome": "Barbadillo Manzanilla",
+            "tipo": "porto",
+            "precoReferencia": 173
+          }
+        ]
+      },
+      {
+        "rotation": 1,
+        "shownAt": "2026-09-26T08:46:11.677Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "tinto",
+            "wineId": "elegante-tinto-6",
+            "nome": "Bouza Tannat",
+            "tipo": "tinto",
+            "precoReferencia": 340
+          },
+          {
+            "tier": "descoberta",
+            "slot": "branco",
+            "wineId": "elegante-branco-1",
+            "nome": "Alain Geoffroy Petit Chablis",
+            "tipo": "branco",
+            "precoReferencia": 392
+          },
+          {
+            "tier": "surpresa",
+            "slot": "adicional",
+            "wineId": "elegante-adicional-2",
+            "nome": "Noval Porto Branco Extra Dry",
+            "tipo": "porto",
+            "precoReferencia": 162
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-26T08:46:10.027Z",
+    "updatedAt": "2026-09-26T08:46:11.677Z"
+  }
+]
