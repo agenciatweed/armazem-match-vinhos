@@ -16,10 +16,9 @@ export function WineCard({ tier, wine, index }: { tier: Tier; wine: Wine; index:
         <Bottle tipo={wine.tipo} />
       </div>
       <div className="wine__body">
-        <p className="wine__type">{TYPE_LABEL[wine.tipo]}</p>
         <h4 className="wine__name">{wine.nome}</h4>
         <p className="wine__origin">
-          {wine.pais} · {wine.uva}
+          <strong className="wine__type">{TYPE_LABEL[wine.tipo]}</strong> · {wine.pais} · {wine.uva}
         </p>
         <dl className="wine__fields">
           <div>

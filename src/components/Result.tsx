@@ -56,17 +56,15 @@ export function Result({ result, trio, shared, storeMode, swapping, onNextTrio, 
   return (
     <div className="result">
       <section className="sheet sheet--profile" aria-labelledby="profile-title" style={{ ['--accent' as string]: profile.accent }}>
-        <div className="sheet__head">
-          <span>Seu perfil</span>
-          <span>Ficha conferida</span>
-        </div>
+        <div className="sheet__rule" aria-hidden="true" />
         <Stamp color={profile.accent} />
-        <p className="profile__lead">Você é</p>
-        <h1 id="profile-title" ref={titleRef} tabIndex={-1} className="display display--hero profile__name">
-          {profile.name}
+        <h1 id="profile-title" ref={titleRef} tabIndex={-1} className="profile__title">
+          <span className="profile__lead">Você é</span>
+          <span className="display display--hero profile__name">{profile.name}</span>
         </h1>
         <p className="profile__tagline">{profile.tagline}</p>
         <p className="profile__desc">{profile.description}</p>
+        <p className="colophon">Seu perfil · Ficha conferida pelo Armazém</p>
       </section>
 
       <section className="match" aria-labelledby="match-title">

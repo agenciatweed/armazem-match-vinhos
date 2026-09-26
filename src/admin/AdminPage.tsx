@@ -202,10 +202,12 @@ export default function AdminPage() {
                       {formatDateTime(l.createdAt)}
                     </td>
                     <td data-label="E-mail" className="ledger__email">
-                      {l.email}
-                      <a className="ledger__link" href={`/?m=${l.shareCode}`} target="_blank" rel="noopener noreferrer">
-                        Ver resultado
-                      </a>
+                      <div>
+                        {l.email}
+                        <a className="ledger__link" href={`/?m=${l.shareCode}`} target="_blank" rel="noopener noreferrer">
+                          Ver resultado
+                        </a>
+                      </div>
                     </td>
                     <td data-label="Perfil">
                       <span className="pill" style={{ ['--accent' as string]: PROFILES[l.profileId]?.accent }}>
@@ -219,8 +221,10 @@ export default function AdminPage() {
                       <WineCell item={byTier(l.trios[0], 'descoberta')} />
                     </td>
                     <td data-label="A Surpresa">
-                      <WineCell item={byTier(l.trios[0], 'surpresa')} />
-                      <OtherTrios trios={l.trios.slice(1)} />
+                      <div>
+                        <WineCell item={byTier(l.trios[0], 'surpresa')} />
+                        <OtherTrios trios={l.trios.slice(1)} />
+                      </div>
                     </td>
                     <td data-label="Canal">{l.channel === 'loja' ? 'Loja' : 'Online'}</td>
                   </tr>

@@ -139,6 +139,10 @@ html[data-surface='admin'] {
   font: 15px var(--font-ui);
 }
 
+.control input::placeholder {
+  color: var(--ink-2);
+}
+
 .controls__buttons {
   display: flex;
   gap: 8px;

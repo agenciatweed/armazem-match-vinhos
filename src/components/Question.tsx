@@ -30,7 +30,7 @@ export const Question = forwardRef<HTMLHeadingElement, Props>(function Question(
             Voltar
           </button>
         ) : (
-          <span>Match do Vinho</span>
+          <span />
         )}
         <Progress step={step} answered={answered} />
       </div>
