@@ -1,5 +1,93 @@
 [
   {
+    "id": "d297ed63-faee-4194-a533-c8b8fe77303a",
+    "email": "lucciano@agenciatweed.com.br",
+    "profileId": "fresco",
+    "profileName": "Fresco & Cítrico",
+    "corpoLevel": 1,
+    "answersKey": "q1:c|q2:c|q3:a|q4:a|q5:e",
+    "shareCode": "ccaae-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-28T14:40:21.786Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "branco",
+            "wineId": "fresco-branco-2",
+            "nome": "Anselmo Mendes Alvarinho Muros Antigos",
+            "tipo": "branco",
+            "precoReferencia": 234
+          },
+          {
+            "tier": "descoberta",
+            "slot": "adicional",
+            "wineId": "fresco-adicional-3",
+            "nome": "Hermann Lírica Crua Nature",
+            "tipo": "espumante",
+            "precoReferencia": 142
+          },
+          {
+            "tier": "surpresa",
+            "slot": "tinto",
+            "wineId": "fresco-tinto-1",
+            "nome": "Marc Jambon Beaujolais-Villages",
+            "tipo": "tinto",
+            "precoReferencia": 204
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-28T14:40:21.786Z",
+    "updatedAt": "2026-09-28T14:40:21.786Z"
+  },
+  {
+    "id": "c35a982b-b61b-4c3f-9527-ab0d3c678f04",
+    "email": "guisnunes1997@gmail.com",
+    "profileId": "elegante",
+    "profileName": "Seco & Elegante",
+    "corpoLevel": 3,
+    "answersKey": "q1:c|q2:c|q3:d|q4:d|q5:d",
+    "shareCode": "ccddd-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-28T14:35:12.333Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "tinto",
+            "wineId": "elegante-tinto-6",
+            "nome": "Bouza Tannat",
+            "tipo": "tinto",
+            "precoReferencia": 340
+          },
+          {
+            "tier": "descoberta",
+            "slot": "branco",
+            "wineId": "elegante-branco-5",
+            "nome": "Louis Latour Mâcon-Lugny Les Genièvres",
+            "tipo": "branco",
+            "precoReferencia": 298
+          },
+          {
+            "tier": "surpresa",
+            "slot": "adicional",
+            "wineId": "elegante-adicional-4",
+            "nome": "Paul Mas Prima Perla Brut",
+            "tipo": "espumante",
+            "precoReferencia": 229
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-28T14:35:12.333Z",
+    "updatedAt": "2026-09-28T14:35:12.333Z"
+  },
+  {
     "id": "8f53ac7f-358b-427c-891d-03d2b436fe9b",
     "email": "tweed@agenciatweed.com.br",
     "profileId": "curva",
