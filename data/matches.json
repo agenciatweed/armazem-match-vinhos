@@ -1,5 +1,49 @@
 [
   {
+    "id": "f1b8b105-a301-43b0-b374-76f8454fd86c",
+    "email": "henriquemignoni@gmail.com",
+    "profileId": "elegante",
+    "profileName": "Seco & Elegante",
+    "corpoLevel": 3,
+    "answersKey": "q1:a|q2:e|q3:a|q4:d|q5:d",
+    "shareCode": "aeadd-0",
+    "trios": [
+      {
+        "rotation": 0,
+        "shownAt": "2026-09-29T11:31:24.905Z",
+        "items": [
+          {
+            "tier": "seguro",
+            "slot": "tinto",
+            "wineId": "elegante-tinto-5",
+            "nome": "Alain Brumont Madiran Torus",
+            "tipo": "tinto",
+            "precoReferencia": 315
+          },
+          {
+            "tier": "descoberta",
+            "slot": "branco",
+            "wineId": "elegante-branco-3",
+            "nome": "Bel Colle Gavi di Gavi",
+            "tipo": "branco",
+            "precoReferencia": 265
+          },
+          {
+            "tier": "surpresa",
+            "slot": "adicional",
+            "wineId": "elegante-adicional-1",
+            "nome": "Barbadillo Manzanilla",
+            "tipo": "porto",
+            "precoReferencia": 173
+          }
+        ]
+      }
+    ],
+    "channel": "online",
+    "createdAt": "2026-09-29T11:31:24.905Z",
+    "updatedAt": "2026-09-29T11:31:24.905Z"
+  },
+  {
     "id": "d297ed63-faee-4194-a533-c8b8fe77303a",
     "email": "lucciano@agenciatweed.com.br",
     "profileId": "fresco",
